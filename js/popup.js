@@ -19,16 +19,15 @@ function loadTable() {
             // insert a cells in the table row
             // Tab Name
             var cell0 = row.insertCell(0);
-            // Status
-            var cell1 = row.insertCell(1);
 
-            // tabID (hidden)
-            var cell2 = row.insertCell(2);
+            // tabID
+            var cell1 = row.insertCell(1);
+            // Hide the tabID
+            cell1.style.display = "none";
 
             // Set the text for each cell
             cell0.innerHTML = tabs[i].title;
-            cell1.innerHTML = tabs[i].discarded;
-            cell2.innerHTML = tabs[i].id;
+            cell1.innerHTML = tabs[i].id;
 
             // Add onClick listener to each row
             row.onclick = rowHandler();
@@ -39,7 +38,7 @@ function loadTable() {
 
 function rowHandler() {
     return function() {
-        var id = this.cells[2].innerHTML;
+        var id = this.cells[1].innerHTML;
 
         // Try to discard the clicked tab by ID
         console.log("tryig to discard here");

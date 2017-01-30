@@ -11,6 +11,11 @@ function loadTable() {
             // Insert a new row for every tab at the last row
             var row = table.insertRow(table.rows.length);
 
+            // Color it red if already discarded
+            if (tabs[i].discarded === true) {
+                row.className = "danger";
+            }
+
             // insert a cells in the table row
             // Tab Name
             var cell0 = row.insertCell(0);
